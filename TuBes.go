@@ -10,7 +10,7 @@ import (
 const MAKS_FILM = 100
 const MAKS_SUTRADARA = 50
 const MAKS_KATEGORI_GENRE = 30
-type tipeFilm struct {
+type TipeFilm struct {
 	ID           int
 	Judul        string
 	Sutradara    string
