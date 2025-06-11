@@ -101,14 +101,14 @@ func generateNewID() int {
 	return DaftarFilm[JumlahFilm-1].ID + 1
 }
 
-func generateNewIDSutradara() int {
+func NewIDSutradara() int {
 	if JumlahSutradara == 0 {
 		return 1
 	}
 	return DaftarSutradara[JumlahSutradara-1].IDSutradara + 1
 }
 
-func generateNewIDGenre() int {
+func NewIDGenre() int {
 	if JumlahKategoriGenre == 0 {
 		return 1
 	}
@@ -143,7 +143,7 @@ func tambahSutradaraBaru(namaSutradara string) {
 	indeksSutradara := cariSutradara(namaSutradara)
 	if indeksSutradara == -1 {
 		var sutradaraBaru TipeSutradara
-		sutradaraBaru.IDSutradara = generateNewIDSutradara()
+		sutradaraBaru.IDSutradara = NewIDSutradara()
 		sutradaraBaru.Nama = namaSutradara
 		sutradaraBaru.JumlahFilm = 1
 		DaftarSutradara[JumlahSutradara] = sutradaraBaru
@@ -161,7 +161,7 @@ func tambahGenreBaru(namaGenre string) {
 	indeksGenre := cariGenre(namaGenre)
 	if indeksGenre == -1 {
 		var genreBaru TipeKategoriGenre
-		genreBaru.IDGenre = generateNewIDGenre()
+		genreBaru.IDGenre = NewIDGenre()
 		genreBaru.Nama = namaGenre
 		genreBaru.JumlahFilm = 1
 		DaftarKategoriGenre[JumlahKategoriGenre] = genreBaru
@@ -544,7 +544,7 @@ func updateFilm() {
 	enterLanjut()
 }
 
-func deleteFilm() {
+func hapusFilm() {
 	spaceScreen()
 	fmt.Println("--- HAPUS FILM ---")
 	garisPisah()
@@ -678,7 +678,7 @@ func main() {
 		case 4:
 			updateFilm()
 		case 5:
-			deleteFilm()
+			hapusFilm()
 		case 6:
 			ubahStatusFilm()
 		case 7:
